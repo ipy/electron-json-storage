@@ -552,7 +552,7 @@ describe('Electron JSON Storage', function() {
         this.newDataPath = path.join(os.tmpdir(), 'electron-json-storage');
         const self = this;
 
-        async.parallel([
+        async.waterfall([
           function(callback) {
             storage.setDataPath(self.newDataPath);
             callback();
